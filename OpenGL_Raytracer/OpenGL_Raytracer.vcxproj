@@ -71,12 +71,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)Dependencies;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLFW\include;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLEW\include;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\glm;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLFW\lib;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLEW\lib\Release\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)Dependencies;$(ProjectDir)Dependencies\GLFW\include;$(ProjectDir)Dependencies\GLEW\include;$(ProjectDir)Dependencies\glm;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Dependencies\GLFW\lib;$(ProjectDir)Dependencies\GLEW\lib\Release\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ProjectDir)Dependencies;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLFW\include;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLEW\include;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\glm;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLFW\lib;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLEW\lib\Release\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)Dependencies;$(ProjectDir)Dependencies\GLFW\include;$(ProjectDir)Dependencies\GLEW\include;$(ProjectDir)Dependencies\glm;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Dependencies\GLFW\lib;$(ProjectDir)Dependencies\GLEW\lib\Release\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -110,9 +110,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLEW\include;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Dependencies;$(ProjectDir)Dependencies\GLEW\include;$(ProjectDir)Dependencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,9 +127,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GLEW_STATIC</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLEW\include;C:\Users\kisho\OneDrive\Desktop\opengl__\OpenGL_Raytracer\OpenGL_Raytracer\Dependencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Dependencies;$(ProjectDir)Dependencies\GLEW\include;$(ProjectDir)Dependencies\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -148,7 +148,9 @@
     <ClCompile Include="Dependencies\imgui_impl_opengl3.cpp" />
     <ClCompile Include="Dependencies\imgui_tables.cpp" />
     <ClCompile Include="Dependencies\imgui_widgets.cpp" />
+    <ClCompile Include="src\Imgui_wrapper.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\main2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dependencies\GLEW\include\GL\eglew.h" />
@@ -166,6 +168,7 @@
     <ClInclude Include="Dependencies\imstb_rectpack.h" />
     <ClInclude Include="Dependencies\imstb_textedit.h" />
     <ClInclude Include="Dependencies\imstb_truetype.h" />
+    <ClInclude Include="src\Imgui_wrapper.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Dependencies\GLEW\bin\Release\Win32\glew32.dll" />
@@ -185,6 +188,7 @@
     <None Include="Dependencies\GLEW\doc\install.html" />
     <None Include="Dependencies\GLEW\doc\log.html" />
     <None Include="Dependencies\GLEW\doc\wglew.html" />
+    <None Include="imgui.ini" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dependencies\GLFW\lib\glfw3.lib" />
